@@ -7,9 +7,11 @@
 ## How to Run the APP
 
 In command line.
+
 #php app.php
 
 Exit program.
+
 #quit
 
 ## Test Overview

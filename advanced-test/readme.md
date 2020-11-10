@@ -7,10 +7,13 @@
 ## How to run
 
 For Server
+
 config values in app/config.php.
+
 import db.sql into database.
 
 For Client
+
 run url "http://{host_name}/app/client.php" in browser.
 
 ## Test Overview
