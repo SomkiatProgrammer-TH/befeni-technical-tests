@@ -4,6 +4,14 @@
 # Befeni Technical Test [Basic]
 </center>
 
+## How to Run the APP
+
+In command line.
+#php app.php
+
+Exit program.
+#quit
+
 ## Test Overview
 
 - The following problem is a simple test which offers you the opportunity to demonstrate some basic programming ability but also affords you a chance to show some of the other requirements that we ware looking for in our next developer.

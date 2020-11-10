@@ -4,6 +4,15 @@
 # Befeni Technical Test [Advanced]
 </center>
 
+## How to run
+
+For Server
+config values in app/config.php.
+import db.sql into database.
+
+For Client
+run url "http://{host_name}/app/client.php" in browser.
+
 ## Test Overview
 
 You are working on a project that receives shirt orders from several sources such as an external API or an in-house data warehouse. Because the import process is expensive - you have already set up a local MySQL database to store the data after the import.
