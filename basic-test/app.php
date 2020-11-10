@@ -7,15 +7,15 @@ $result = '';
 while (true) {
 	$input = fgets($handle);
 	$command = "";
-	$arg = 0;
+	$num = 0;
 
 	$input = str_replace( 
 		array( "\r\n", "\n" ), array( "", "" ), trim( $input ) 
 	);
 	$input = @explode(" ", $input, 2);
 	if (isset($input[1])) {
-		list($command, $arg) = $input;
-		$arg = (int)$arg;
+		list($command, $num) = $input;
+		$num = (int)$num;
 	} else {
 		$command = $input[0];
 	}
@@ -23,45 +23,45 @@ while (true) {
 	if (!is_callable($command) || $command == "_process") {
 		echo "Do not know \"$command\".\r\n";
 	} else {
-		call_user_func($command, $arg);
+		call_user_func($command, $num);
 	}
 }
 
 fclose($handle);
 
-function add($arg) {
+function add($num) {
 	$operator = '+';
-	_process($operator, $arg);	
+	_process($operator, $num);	
 }
 
-function divide($arg) {
+function divide($num) {
 	$operator = '/';
-	_process($operator, $arg);	
+	_process($operator, $num);	
 }
 
-function multiply($arg) {
+function multiply($num) {
 	$operator = '*';
-	_process($operator, $arg);
+	_process($operator, $num);
 }
 
-function subtract($arg) {
+function subtract($num) {
 	$operator = '-';
-	_process($operator, $arg);
+	_process($operator, $num);
 }
 
-function _process($operator, $arg) {
+function _process($operator, $num) {
 	GLOBAL $result;
 
 	if ($result != '') {
-		$result = '(' . $result . $arg . ')' . $operator;
+		$result = '(' . $result . $num . ')' . $operator;
 	} else {
-		$result .= $arg . $operator;
+		$result .= $num . $operator;
 	}
 }
 
-function apply($arg) {
+function apply($num) {
 	GLOBAL $result;
-	$result .= $arg;
+	$result .= $num;
 
 	eval( '$result = (' . $result. ');' );
 	echo ($result) . "\r\n";
